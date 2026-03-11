@@ -1,0 +1,19 @@
+import React from 'react';
+import './src/i18n';
+import { AuthProvider } from './src/context/AuthContext';
+import { SOSProvider } from './src/context/SOSContext';
+import AppNavigator from './src/navigation/AppNavigator';
+
+import { NotificationProvider } from './src/context/NotificationContext';
+
+export default function App() {
+  return (
+    <AuthProvider>
+      <NotificationProvider>
+        <SOSProvider>
+          <AppNavigator />
+        </SOSProvider>
+      </NotificationProvider>
+    </AuthProvider>
+  );
+}
